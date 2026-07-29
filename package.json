@@ -6,7 +6,8 @@
   "scripts": {
     "compile": "hardhat compile",
     "deploy": "hardhat run scripts/deploy.js --network sepolia",
-    "watch": "python3 python/watcher.py"
+    "watch": "python3 python/watcher.py",
+    "agent": "node src/agent.js"
   },
   "devDependencies": {
     "hardhat": "^3.4.0",
@@ -17,6 +18,9 @@
     "viem": "^2.0.0",
     "dotenv": "^16.0.0"
   },
-  "keywords": ["iexec", "nox", "tee", "defi", "security", "threat-intelligence", "oracle", "confidential-computing"],
+  "dependencies": {
+    "keeperhub": "latest"
+  },
+  "keywords": ["iexec", "nox", "tee", "defi", "security", "threat-intelligence", "oracle", "confidential-computing", "keeperhub", "mcp", "ai-agent", "autonomous-agents"],
   "license": "MIT"
 }
