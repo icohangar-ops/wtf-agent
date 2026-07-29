@@ -1,0 +1,22 @@
+{
+  "name": "wtf-agent",
+  "version": "1.0.0",
+  "description": "WTF-Agent: Web3 Truth & Threat Fusion - Confidential Threat Intelligence on iExec Nox TEE",
+  "type": "module",
+  "scripts": {
+    "compile": "hardhat compile",
+    "deploy": "hardhat run scripts/deploy.js --network sepolia",
+    "watch": "python3 python/watcher.py"
+  },
+  "devDependencies": {
+    "hardhat": "^3.4.0",
+    "@nomicfoundation/hardhat-viem": "^3.0.0",
+    "@iexec-nox/nox-protocol-contracts": "^0.1.0",
+    "@iexec-nox/nox-hardhat-plugin": "^0.1.0",
+    "encrypted-types": "^0.1.0",
+    "viem": "^2.0.0",
+    "dotenv": "^16.0.0"
+  },
+  "keywords": ["iexec", "nox", "tee", "defi", "security", "threat-intelligence", "oracle", "confidential-computing"],
+  "license": "MIT"
+}
