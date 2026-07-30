@@ -40,15 +40,28 @@ OSINT Engine (Tavily API)
      On-Chain TX Confirmed
 ```
 
-## Deployed Contracts (Ethereum Sepolia)
+## Deployed Contracts
 
-| Contract | Address | Explorer |
-|----------|---------|----------|
-| ConfidentialWatchlist | `0xf3b271e7aeecca0d110431b17b9142e9ff68720d` | [Etherscan](https://sepolia.etherscan.io/address/0xf3b271e7aeecca0d110431b17b9142e9ff68720d) |
-| ConfidentialThreatScorer | `0x6931e02f0ae958e6a3a3485a6782dde8c00e2bc6` | [Etherscan](https://sepolia.etherscan.io/address/0x6931e02f0ae958e6a3a3485a6782dde8c00e2bc6) |
-| WTFOracle | `0x69a30e394b99989f1f3c519758fbd54425d2c113` | [Etherscan](https://sepolia.etherscan.io/address/0x69a30e394b99989f1f3c519758fbd54425d2c113) |
+**Chain: Ethereum Sepolia (chain ID `11155111`)** — every address below is on Sepolia and
+nowhere else. Verify only against a Sepolia explorer.
 
-**Deployer:** `0x4c10043F68F7d9ADF6CeeCFD2A7eC82bB19C8937`
+| Contract | Chain | Address | Explorer |
+|----------|-------|---------|----------|
+| ConfidentialWatchlist | Ethereum Sepolia | `0xf3b271e7aeecca0d110431b17b9142e9ff68720d` | [Etherscan](https://sepolia.etherscan.io/address/0xf3b271e7aeecca0d110431b17b9142e9ff68720d) |
+| ConfidentialThreatScorer | Ethereum Sepolia | `0x6931e02f0ae958e6a3a3485a6782dde8c00e2bc6` | [Etherscan](https://sepolia.etherscan.io/address/0x6931e02f0ae958e6a3a3485a6782dde8c00e2bc6) |
+| WTFOracle | Ethereum Sepolia | `0x69a30e394b99989f1f3c519758fbd54425d2c113` | [Etherscan](https://sepolia.etherscan.io/address/0x69a30e394b99989f1f3c519758fbd54425d2c113) |
+
+**Deployer:** `0x4c10043F68F7d9ADF6CeeCFD2A7eC82bB19C8937` (Ethereum Sepolia)
+
+> **These three addresses also appear in [`swarmfi-monad`](https://github.com/icohangar-ops/swarmfi-monad)
+> under different contract names, on Monad testnet.** That is expected, not a mistake.
+> A `CREATE` address is `keccak256(rlp([deployer, nonce]))` — it does not include the chain
+> ID, so the same deployer wallet deploying at the same nonces on two chains produces
+> identical addresses. The contracts are unrelated; only the addresses collide.
+>
+> The practical consequence: **an address alone does not identify a contract here.** Always
+> pair it with the chain before looking it up, or a Sepolia explorer will confidently show
+> you the wrong thing.
 
 ## Architecture
 
